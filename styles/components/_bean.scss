@@ -1,0 +1,89 @@
+.c-bean {
+    position: absolute;
+    z-index: -1;
+    animation: float-bean1 15s ease-in-out;
+    animation-iteration-count: infinite;
+    transition: opacity 1s;
+    will-change: transform;
+
+    &.js-bean-loaded {
+        opacity: 1 !important;
+    }
+
+    @keyframes float-bean1 {
+        0% {
+            transform: translate(0, 0)
+        }
+        25% {
+            transform: translate(-12%, -60%)
+        }
+        50% {
+            transform: translate(0, -120%)
+        }
+        75% {
+            transform: translate(12%, -60%)
+        }
+        100% {
+            transform: translate(0, 0)
+        }
+    }
+
+    @keyframes float-bean2 {
+        0% {
+            transform: translate(0, -60%)
+        }
+        33% {
+            transform: translate(12%, -120%)
+        }
+        66% {
+            transform: translate(-12%, 0)
+        }
+        100% {
+            transform: translate(0, -60%)
+        }
+    }
+
+    @keyframes float-bean3 {
+        0% {
+            transform: translate(0, 0)
+        }
+        40% {
+            transform: translate(-18%, -120%)
+        }
+        65% {
+            transform: translate(-30%, -60%)
+        }
+        100% {
+            transform: translate(0, 0)
+        }
+    }
+
+    @keyframes float-bean4 {
+        0% {
+            transform: translate(0, 0)
+        }
+        15% {
+            transform: translate(-30%, -60%)
+        }
+        40% {
+            transform: translate(30%, -30%)
+        }
+        60% {
+            transform: translate(90%, 0)
+        }
+        85% {
+            transform: translate(0, -60%)
+        }
+        100% {
+            transform: translate(0, 0)
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c-bean {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

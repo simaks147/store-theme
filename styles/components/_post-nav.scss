@@ -1,0 +1,30 @@
+.c-post-nav {
+    display: flex;
+    margin-bottom: 28px;
+
+    &__item {
+        color: $theme-color6;
+
+        &:after {
+            content: '\3E';
+            color: $theme-color4;
+            margin-left: 4px;
+            margin-right: 7px;
+        }
+
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

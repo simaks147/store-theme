@@ -1,0 +1,51 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-support {
+    margin-bottom: 65px;
+    @include media($s) {
+        margin-bottom: 130px;
+    }
+    &__inner {
+        @include media($s) {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+    }
+
+    &__title {
+        font-family: $font2;
+        font-size: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.1;
+        margin-bottom: 40px;
+        text-align: center;
+        @include media($s) {
+            font-size: 40px;
+            text-align: left;
+        }
+    }
+
+    &__item {
+        margin-bottom: 36px;
+        padding-bottom: 36px;
+        border-bottom: 1px solid #e2e0d8;
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 16px;
+        font-size: 20px;
+        font-family: $font2;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @include media($s) {
+            font-size: 25px;
+        }
+    }
+}

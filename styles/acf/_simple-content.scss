@@ -1,0 +1,55 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-simple-content {
+    margin-bottom: 60px;
+    @include media($s) {
+        margin-bottom: 76px;
+    }
+
+    &_centered {
+        @include media($s) {
+            margin-bottom: 120px;
+        }
+    }
+
+    .join-our-team & {
+        margin-bottom: 40px;
+        @include media($s) {
+            margin-bottom: 40px;
+        }
+    }
+
+    .privacy-policy-legal & {
+        margin-bottom: 80px;
+        @include media($s) {
+            margin-bottom: 180px;
+        }
+    }
+
+    &__inner {
+        max-width: 750px;
+        margin: 0 auto;
+
+        .c-simple-content_centered & {
+            text-align: center;
+            max-width: 790px;
+        }
+    }
+
+    &__title {
+        font-family: $font2;
+        font-size: 33px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.1;
+        margin-bottom: 14px;
+        @include media($s) {
+            font-size: 40px;
+        }
+    }
+
+    .c-button {
+        margin-top: 25px;
+    }
+}

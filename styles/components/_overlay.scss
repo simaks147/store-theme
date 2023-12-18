@@ -1,0 +1,19 @@
+.c-overlay {
+    background-color: $theme-color2;
+    position: absolute;
+    top: 0;
+    bottom: 100%;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 10;
+    transition: bottom 0s .3s, opacity .3s;
+
+
+    .js-vimeo-video-popup-active &,
+    .js-youtube-video-popup-active & {
+        bottom: 0;
+        transition: bottom 0s, opacity .3s;
+        opacity: .75;
+    }
+}

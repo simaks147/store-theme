@@ -1,0 +1,100 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-hero {
+    margin-bottom: 45px;
+    @include media($s) {
+        margin-bottom: 130px;
+    }
+
+    &_clipped {
+        margin-bottom: 66px;
+        @include media($s) {
+            margin-bottom: 66px;
+        }
+    }
+
+    .post-type-archive-event &,
+    .tax-event-type & {
+        @include media($s) {
+            margin-bottom: 58px;
+        }
+    }
+
+    .company-resources &,
+    .partnership &,
+    .team & {
+        @include media($s) {
+            margin-bottom: 80px;
+        }
+    }
+
+    &__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    &__image {
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+
+        .c-hero_clipped & {
+            max-height: 400px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        text-align: center;
+        margin-top: 18px;
+        position: relative;
+        @include media($s) {
+            max-width: 750px;
+            margin: 0 auto;
+            margin-top: -160px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+            background-color: $theme-color1;
+            padding-top: 24px;
+            padding-bottom: 38px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .post-type-archive-event &,
+        .tax-event-type & {
+            @include media($s) {
+                margin-top: -110px;
+            }
+        }
+    }
+
+    &__title {
+        font-family: $font2;
+        font-weight: 700;
+        font-size: 33px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        @include media($s) {
+            font-size: 55px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .c-button {
+        margin-top: 30px;
+        @include media(max-width $s - 1px) {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,88 @@
+.c-search-form {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    background-color: $theme-color1;
+    transition: width .3s, z-index .3s;
+    bottom: 0;
+    height: 38px;
+    @include media($s) {
+        right: -15px;
+        height: 42px;
+        max-height: 100%;
+    }
+
+    .c-search-results & {
+        z-index: 1;
+        position: relative;
+        right: 0;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .js-search-active .c-header & {
+        z-index: 1;
+        width: 100%;
+        @include media($s) {
+            width: calc(100% - 21px);
+        }
+    }
+
+    &__input {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 2;
+        width: 100%;
+        height: 100%;
+        padding-left: 50px;
+        padding-right: 44px;
+        padding-top: 2px;
+        margin-left: 3px;
+        @include media($s) {
+            font-size: 14px;
+            margin-left: 0;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        cursor: pointer;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 2px;
+    }
+
+    &__close {
+        position: absolute;
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            height: 1px;
+            width: 100%;
+            background-color: $theme-color4;
+        }
+
+        &:before {
+            transform: translateY(-50%) rotateZ(45deg);
+        }
+
+        &:after {
+            transform: translateY(-50%) rotateZ(-45deg);
+        }
+
+        .c-search-results & {
+            display: none;
+        }
+    }
+}

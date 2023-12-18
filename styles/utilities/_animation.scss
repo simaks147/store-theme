@@ -1,0 +1,24 @@
+[data-waypoint] {
+    transform: scale(.95) translateY(20px);
+    //opacity: 0;
+    transition: opacity 1s, transform 1s;
+
+    &.js-in {
+        transform: scale(1) translateY(0);
+        opacity: 1 !important;
+
+        @for $i from 1 to 100 {
+            &.c-new-favs__item,
+            &.c-instagram__image,
+            &.c-tiles__item {
+                &:nth-child(#{$i}) {
+                    transition: all 1s ($i * 0.2s) !important;
+                }
+            }
+        }
+
+        //&.c-video__inner {
+        //    min-height: auto !important;
+        //}
+    }
+}

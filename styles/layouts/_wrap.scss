@@ -1,0 +1,19 @@
+.l-wrap {
+    flex: 1 0 auto;
+    overflow: hidden;
+    padding-top: 90px;
+    @include media($s) {
+        padding-top: 200px;
+    }
+
+    //.js-loaded & {
+    //    max-height: none !important;
+    //    overflow: visible;
+    //}
+
+    .hidden-top-panel & {
+        @include media($s) {
+            padding-top: 158px;
+        }
+    }
+}

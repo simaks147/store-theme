@@ -1,0 +1,60 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-rewards {
+    margin-bottom: 80px;
+    @include media($s) {
+        margin-bottom: 190px;
+    }
+
+    &__inner {
+        max-width: 930px;
+        margin: 0 auto;
+        @include media($s) {
+            display: flex;
+        }
+    }
+
+    &__app {
+        margin-bottom: 50px;
+        @include media($s) {
+            margin-right: 105px;
+        }
+    }
+
+    &__image {
+        margin-bottom: 30px;
+        img {
+            margin: 0 auto;
+            width: 240px;
+            height: auto;
+        }
+    }
+
+    &__store {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__store-item {
+        margin-right: 30px;
+        opacity: 1;
+        transition: opacity .3s;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+
+        @include media($s) {
+            margin-right: 13px;
+        }
+
+        svg {
+            width: 118px;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-menu-item {
+    margin-bottom: 100px;
+    @include media($s) {
+        margin-bottom: 200px;
+    }
+
+    .l-container {
+        max-width: 970px;
+    }
+
+    &__inner {
+        @include media($s) {
+            display: flex;
+        }
+    }
+
+    &__image {
+        @include media($s) {
+            margin-right: 104px;
+        }
+
+        img {
+          max-width: 259px;
+            @include media(max-width $s - 1px) {
+                max-width: 170px;
+            }
+        }
+    }
+
+    &__text {
+        margin-bottom: 36px;
+    }
+
+    &__title {
+        font-family: $font2;
+        font-weight: 700;
+        font-size: 25px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        @include media($s) {
+            font-size: 40px;
+        }
+    }
+
+    &__nutrition-title {
+        font-family: $font2;
+        font-weight: 700;
+        font-size: 25px;
+        margin-bottom: 16px;
+    }
+
+    &__nutrition-image {
+        display: inline-block;
+
+        svg {
+            width: 100%;
+
+            image {
+                width: 100%;
+            }
+        }
+    }
+
+    &__nutrition-info {
+        margin-bottom: 14px;
+    }
+
+    &__nutrition-list {
+        width: 210px;
+    }
+
+    &__nutrition-item {
+        display: flex;
+        border-bottom: 1px solid $theme-color4;
+        padding: 9px 0;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__nutrition-item-label {
+        font-weight: 700;
+        margin-right: 5px;
+    }
+}

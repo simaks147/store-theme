@@ -1,0 +1,173 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-accordion {
+    margin-bottom: 65px;
+    @include media($s) {
+        margin-bottom: 130px;
+    }
+
+    &__inner {
+        @include media($s) {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+    }
+
+
+    &__item {
+        position: relative;
+        margin-bottom: 6px;
+
+        &.js-accordion-active {
+            margin-bottom: 27px;
+            z-index: 1;
+            box-shadow: 0 4px 42px 1px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &__item-question-wrap {
+        display: flex;
+        justify-content: space-between;
+        min-height: 108px;
+        border-radius: 4px;
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+        background-color: $theme-color1;
+        padding-top: 16px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        @include media($s) {
+            padding-top: 26px;
+            padding-bottom: 26px;
+        }
+
+        .js-accordion-active & {
+            box-shadow: none;
+        }
+    }
+
+    &__item-question {
+        font-size: 25px;
+        font-weight: 700;
+        align-self: center;
+        cursor: pointer;
+    }
+
+    &__item-trigger {
+        cursor: pointer;
+        margin-left: 10px;
+        background-color: $theme-color6;
+        min-width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: flex;
+        position: relative;
+        z-index: 1;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        transition: background-color .3s;
+
+        &:hover {
+            background-color: $theme-color7;
+        }
+
+        @include media($xs) {
+            min-width: 48px;
+            height: 48px;
+            margin-top: 13px;
+        }
+
+        @include media($s) {
+            margin-top: 4px;
+            font-size: 84px;
+            margin-left: 30px;
+        }
+
+        svg {
+            transform: rotateZ(0);
+            transition: .3s;
+            @include media(max-width $xs - 1px) {
+                width: 16px;
+                height: 16px;
+            }
+
+            .js-accordion-active & {
+                transform: rotateZ(45deg);
+            }
+        }
+    }
+
+    &__item-answer {
+        position: relative;
+        margin-top: -23px;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+        background-color: $theme-color1;
+        padding-left: 20px;
+        padding-right: 20px;
+        opacity: 0;
+        transition: .2s;
+        padding-bottom: 20px;
+        @include media($s) {
+            padding-bottom: 26px;
+        }
+
+        .js-accordion-active & {
+            opacity: 1;
+            box-shadow: none;
+        }
+
+        .company-resources & {
+            @include media($s) {
+                padding-bottom: 60px;
+            }
+
+            p {
+                margin: 6px 0;
+                font-weight: 700;
+            }
+
+            a {
+                text-decoration: underline;
+                font-weight: 400;
+                color: $theme-color6;
+            }
+
+            *:last-child {
+                margin-bottom: inherit !important;
+            }
+        }
+
+        &_columns {
+            @include media($s) {
+                overflow: hidden;
+            }
+        }
+
+        b {
+            position: absolute;
+            height: 13px;
+            top: -13px;
+            left: 0;
+            background-color: $theme-color1;
+            width: 100%;
+        }
+    }
+
+    &__item-answer-list-wrap {
+        margin-bottom: 25px;
+    }
+
+    &__item-answer-inner {
+        @include media($s) {
+            column-count: 2;
+        }
+    }
+
+    .c-button {
+        color: $theme-color1;
+        margin-bottom: 25px !important;
+    }
+}

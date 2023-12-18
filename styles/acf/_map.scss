@@ -1,0 +1,15 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-map {
+    margin-bottom: 65px;
+    @include media($s) {
+        margin-bottom: 130px;
+    }
+    &__inner {
+        @include media($s) {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-locations {
+    margin-bottom: 65px;
+
+    @include media($s) {
+        margin-top: -20px;
+        margin-bottom: 100px;
+    }
+
+    &__header {
+        margin-bottom: 28px;
+    }
+
+    &__header-inner {
+        @include media($s) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__header-title {
+        font-family: $font2;
+        font-size: 33px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.1;
+        @include media($s) {
+            font-size: 40px;
+            margin-right: 40px;
+        }
+    }
+
+    .c-search-locations-form {
+        input {
+            margin-top: 14px;
+            margin-bottom: 14px;
+
+            @include media($s) {
+                width: 428px;
+            }
+        }
+    }
+
+    &__map-inner {
+        margin-bottom: 40px;
+        height: 400px;
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        border-radius: 4px;
+
+        @include media($s) {
+            height: 700px;
+        }
+    }
+
+    &__closest-title {
+        font-family: $font2;
+        font-size: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.1;
+        text-align: center;
+        margin-bottom: 36px;
+        @include media($s) {
+            font-size: 30px;
+        }
+
+        //.js-search-was & {
+        //    display: block !important;
+        //}
+    }
+
+    &__results {
+        &.js-results-hidden {
+            visibility: hidden;
+        }
+    }
+
+    &__results-no {
+        text-align: center;
+        .js-no-search-results & {
+            display: block !important;
+        }
+    }
+}

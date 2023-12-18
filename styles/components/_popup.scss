@@ -1,0 +1,70 @@
+.c-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    z-index: 11;
+    width: 100%;
+    max-width: calc(177.778vh - 120px);
+    max-height: calc(100vh - 60px);
+    height: 56.25vw;
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+    transition: all .5s;
+
+    @include media($l) {
+        width: 920px;
+        height: 518px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 56.25vw !important;
+        max-height: calc(100vh - 60px);
+        max-width: calc(177.778vh - 120px);
+
+        @include media($l) {
+            width: 920px !important;
+            height: 518px !important;
+        }
+    }
+
+    .js-vimeo-video-active &,
+    .js-youtube-video-active & {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        visibility: visible;
+        display: block;
+        background-color: $theme-color2;
+    }
+
+    &__close {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        bottom: 100%;
+        right: 40px;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            width: 100%;
+            background-color: $theme-color1;
+        }
+
+        &:before {
+            transform: translateY(-50%) rotateZ(45deg);
+        }
+
+        &:after {
+            transform: translateY(-50%) rotateZ(-45deg);
+        }
+    }
+}
+
+

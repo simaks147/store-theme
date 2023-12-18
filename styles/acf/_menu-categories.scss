@@ -1,0 +1,123 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-menu-categories {
+    margin-bottom: 65px;
+    @include media($s) {
+        margin-bottom: 100px;
+    }
+
+    .l-container {
+        max-width: 1336px;
+    }
+
+    &__title {
+        font-family: $font2;
+        font-weight: 700;
+        font-size: 33px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        text-align: center;
+        @include media($s) {
+            font-size: 55px;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__list {
+        @include media($xs) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -30px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+        //border-right-color: $theme-color1;
+        margin-bottom: 53px;
+        background-color: $theme-color1;
+        padding: 30px 5px;
+        text-decoration: none;
+
+        .c-menu-categories_full-img & {
+            padding: 0;
+            //padding-bottom: 30px;
+        }
+
+        &:hover {
+            .c-menu-categories__item-image {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        @include media($xs) {
+            width: calc(50% - 30px);
+            margin-bottom: 30px;
+            margin-right: 30px;
+        }
+
+        @include media($s) {
+            width: calc(33.33% - 30px);
+        }
+
+        @include media($l) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+
+    &__item-image {
+        margin-bottom: 28px;
+
+        img {
+            height: 255px;
+            max-width: 100%;
+            transform: none;
+            transition: transform .3s;
+            object-fit: contain;
+        }
+
+        .c-menu-categories_full-img & {
+            margin-bottom: 0;
+            img {
+                height: auto;
+            }
+        }
+    }
+
+    &__item-title {
+        font-size: 25px;
+        font-family: $font2;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        color: $theme-color3;
+
+        @include media($s) {
+            font-size: 23px;
+        }
+
+        @include media($l) {
+            font-size: 31px;
+        }
+
+        .c-menu-categories_full-img & {
+            color: $theme-color1;
+            position: absolute;
+            bottom: 30px;
+
+            @include media($l) {
+                bottom: 40px;
+            }
+        }
+    }
+}

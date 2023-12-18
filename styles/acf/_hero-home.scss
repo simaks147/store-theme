@@ -1,0 +1,111 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-hero-home {
+    margin-bottom: 70px;
+    @include media($s) {
+        margin-bottom: 120px;
+    }
+    &__inner {
+        position: relative;
+        @include media($s) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__content {
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 18px;
+        @include media($s) {
+            position: relative;
+            width: 583px;
+            padding-right: 30px;
+            text-align: left;
+        }
+
+        .swiper-slide {
+            transition-duration: .4s !important;
+        }
+
+        .swiper-pagination {
+            z-index: 1 !important;
+            top: calc(100% + 20px);
+            left: 50%;
+            transform: translateX(-50%);
+            @include media($s) {
+                top: calc(100% + 40px);
+            }
+            @include media($xl) {
+                top: calc(100% + 70px);
+            }
+        }
+
+        .swiper-pagination-bullet {
+            outline: none;
+            margin: 0 7px;
+            width: 14px;
+            height: 14px;
+            background-color: $theme-color1;
+            border: 2px solid $theme-color3;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: $theme-color6;
+            border: none;
+        }
+    }
+
+    &__title {
+        font-family: $font2;
+        font-weight: 700;
+        font-size: 33px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        @include media($s) {
+            font-size: 55px;
+            margin-bottom: 12px;
+        }
+    }
+
+    &__sub-title {
+        font-size: 16px;
+        @include media($s) {
+            font-size: 20px;
+        }
+    }
+
+    &__image {
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+        margin-bottom: 18px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__slider {
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+        margin-bottom: 18px;
+
+        @include media($s) {
+            width: 684px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .c-button {
+        margin-top: 30px;
+        @include media(max-width $s - 1px) {
+            width: 100%;
+        }
+    }
+}

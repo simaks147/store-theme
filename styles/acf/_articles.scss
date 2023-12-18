@@ -1,0 +1,57 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-articles {
+    @include media($s) {
+        margin-bottom: 60px;
+    }
+
+    &__list {
+        max-width: 1100px;
+        margin: 0 auto;
+        @include media($s) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    &__item {
+        margin-bottom: 50px;
+        @include media($s) {
+            margin-bottom: 70px;
+            max-width: calc(50% - 20px);
+        }
+    }
+
+    &__item-image {
+        margin-bottom: 27px;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+        max-width: 530px;
+
+        img {
+            max-width: 100%;
+            @include media($s) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__item-title {
+        font-family: $font2;
+        font-size: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.1;
+        margin-bottom: 14px;
+        @include media($s) {
+            font-size: 30px;
+        }
+    }
+
+    .c-button {
+        margin-top: 28px;
+    }
+}

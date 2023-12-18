@@ -1,0 +1,97 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-menu-items {
+    margin-bottom: 65px;
+    @include media($s) {
+        margin-bottom: 100px;
+    }
+
+    .l-container {
+        max-width: 1336px;
+    }
+
+    &__title {
+        font-family: $font2;
+        font-weight: 700;
+        font-size: 33px;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        text-align: center;
+        @include media($s) {
+            font-size: 55px;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__list {
+        @include media($s) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -22px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+        //border-right-color: $theme-color1;
+        margin-bottom: 53px;
+        background-color: $theme-color1;
+        padding: 30px 5px;
+        text-decoration: none;
+
+        &:hover {
+            .c-menu-items__item-image {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        @include media($s) {
+            width: calc(25% - 22px);
+            margin-bottom: 22px;
+            margin-right: 22px;
+        }
+
+        @include media($l) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+
+    &__item-image {
+        margin-bottom: 28px;
+
+        img {
+            height: 227px;
+            max-width: 100%;
+            transform: none;
+            transition: transform .3s;
+            object-fit: contain;
+            will-change: transform;
+        }
+    }
+
+    &__item-title {
+        font-size: 25px;
+        font-family: $font2;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        color: $theme-color3;
+
+        @include media($s) {
+            font-size: 23px;
+        }
+
+        @include media($l) {
+            font-size: 31px;
+        }
+    }
+}

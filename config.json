@@ -1,0 +1,125 @@
+{
+  "entry": {
+    "main": [
+      "./styles/main.scss"
+    ],
+    "global": [
+      "./scripts/common/global.js"
+    ],
+    "cssrelpreload": [
+      "./scripts/common/cssrelpreload.js"
+    ],
+    "share-buttons": [
+      "./scripts/common/share-buttons.js"
+    ],
+    "header": [
+      "./styles/partials/_header.scss",
+      "./scripts/components/header.js"
+    ],
+    "footer": [
+      "./styles/partials/_footer.scss"
+    ],
+    "hero-home": [
+      "./styles/acf/_hero-home.scss",
+      "./scripts/components/hero-home.js"
+    ],
+    "new-favs": [
+      "./styles/acf/_new-favs.scss"
+    ],
+    "tiles": [
+      "./styles/acf/_tiles.scss"
+    ],
+    "instagram": [
+      "./styles/acf/_instagram.scss"
+    ],
+    "hero": [
+      "./styles/acf/_hero.scss",
+      "./scripts/components/hero.js"
+    ],
+    "form": [
+      "./styles/acf/_form.scss",
+      "./scripts/components/form.js"
+    ],
+    "form2": [
+      "./styles/acf/_form2.scss",
+      "./scripts/components/form2.js"
+    ],
+    "form3": [
+      "./styles/acf/_form3.scss",
+      "./scripts/components/form3.js"
+    ],
+    "video": [
+      "./styles/acf/_video.scss"
+    ],
+    "vimeo": [
+      "./scripts/components/vimeo.js"
+    ],
+    "youtube": [
+      "./scripts/components/youtube.js"
+    ],
+    "article": [
+      "./styles/acf/_article.scss"
+    ],
+    "support": [
+      "./styles/acf/_support.scss"
+    ],
+    "steps": [
+      "./styles/acf/_steps.scss",
+      "./scripts/components/steps.js"
+    ],
+    "map": [
+      "./styles/acf/_map.scss"
+    ],
+    "accordion": [
+      "./styles/acf/_accordion.scss",
+      "./scripts/components/accordion.js"
+    ],
+    "articles": [
+      "./styles/acf/_articles.scss"
+    ],
+    "simple-content": [
+      "./styles/acf/_simple-content.scss"
+    ],
+    "locations": [
+      "./styles/partials/_locations.scss",
+      "./scripts/components/locations.js"
+    ],
+    "search-team": [
+      "./styles/acf/_search-team.scss",
+      "./scripts/components/search-team.js"
+    ],
+    "menu-categories": [
+      "./styles/acf/_menu-categories.scss"
+    ],
+    "menu-items": [
+      "./styles/partials/_menu-items.scss"
+    ],
+    "menu-item": [
+      "./styles/partials/_menu-item.scss"
+    ],
+    "events": [
+      "./styles/partials/_events.scss"
+    ],
+    "event": [
+      "./styles/partials/_event.scss"
+    ],
+    "rewards": [
+      "./styles/acf/_rewards.scss"
+    ],
+    "search-results": [
+      "./styles/partials/_search-results.scss"
+    ],
+    "nutrition-calculator": [
+      "./scripts/components/nutrition-calculator.js"
+    ]
+  },
+  "publicPath": "/app/themes/sage",
+  "devUrl": "http://example.test",
+  "proxyUrl": "http://localhost:3000",
+  "cacheBusting": "[name]",
+  "watch": [
+    "app/**/*.php",
+    "config/**/*.php",
+    "resources/views/**/*.php"
+  ]
+}

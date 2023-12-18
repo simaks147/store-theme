@@ -1,0 +1,208 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-footer {
+    padding-bottom: 50px;
+    @include media($s) {
+        padding-bottom: 23px;
+    }
+
+    &__inner {
+        max-width: 1060px;
+        margin: 0 auto;
+        @include media($s) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__nav {
+        margin-bottom: 40px;
+        @include media($s) {
+            order: 2;
+        }
+
+
+        .menu {
+            columns: 2;
+
+            @include media($xs) {
+                columns: 3;
+            }
+
+            @include media($s) {
+                columns: 5;
+            }
+            @include media($l) {
+                columns: auto;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        .menu-item {
+            a {
+                display: block;
+                font-family: $font2;
+                font-weight: 700;
+                font-size: 15px;
+                color: $theme-color3;
+                text-transform: uppercase;
+                text-decoration: none;
+                line-height: 2.4;
+                @include media($s) {
+                    font-size: 16px;
+                }
+            }
+
+            &:hover {
+                a {
+                    color: $theme-color6;
+                }
+            }
+        }
+    }
+
+    &__links {
+        margin-bottom: 16px;
+        @include media($s) {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 33px;
+        }
+    }
+
+    &__store {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 44px;
+        @include media($s) {
+            order: 3;
+            margin-bottom: 0;
+        }
+    }
+
+    &__store-item {
+        margin-right: 30px;
+        opacity: 1;
+        transition: opacity .3s;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+
+        @include media($s) {
+            margin-right: 13px;
+        }
+
+        svg {
+            width: 118px;
+        }
+    }
+
+    &__social {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        @include media($s) {
+            order: 2;
+            margin-bottom: 0;
+            margin-left: 8%;
+        }
+    }
+
+    &__social-item {
+        margin-right: 25px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            svg {
+                path {
+                    fill: $theme-color7;
+                }
+            }
+        }
+
+        svg {
+            width: 34px;
+
+            path {
+                transition: fill .3s;
+            }
+        }
+    }
+
+    &__pay {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__pay-item {
+        margin-right: 10px;
+        opacity: 1;
+        transition: opacity .3s;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+
+        svg {
+            width: 54px;
+            @include media($s) {
+                width: 48px;
+            }
+        }
+    }
+
+    &__rights {
+        font-size: 11px;
+        text-align: center;
+        @include media($s) {
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            order: 3;
+        }
+    }
+
+    &__rights-links {
+        display: none;
+        @include media($s) {
+            display: block;
+        }
+
+        .menu {
+            @include media($s) {
+                display: flex;
+            }
+        }
+
+        .menu-item {
+            border-left: 1px solid $theme-color3;
+            margin-left: 9px;
+            line-height: 1;
+
+            a {
+                color: $theme-color3;
+                text-decoration: none;
+                margin-left: 9px;
+
+                &:hover {
+                    color: $theme-color6;
+                }
+            }
+        }
+    }
+}

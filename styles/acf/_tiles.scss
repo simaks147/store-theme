@@ -1,0 +1,281 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-tiles {
+    margin-bottom: 65px;
+    @include media($s) {
+        margin-bottom: 100px;
+    }
+
+    &__inner {
+        @include media($s) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -30px;
+        }
+
+        .c-tiles_4 & {
+            @include media($s) {
+                margin-right: -23px;
+            }
+        }
+
+        body.locations & {
+
+            @include media($xs) {
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: -23px;
+            }
+        }
+    }
+
+    &__item {
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+        border-right-color: $theme-color1;
+        margin-bottom: 53px;
+        text-align: center;
+        background-color: $theme-color1;
+        text-decoration: none;
+
+        &:hover {
+            .c-tiles__item-image {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        @include media($s) {
+            width: calc(33.33% - 30px);
+            margin-bottom: 30px;
+            margin-right: 30px;
+            text-align: left;
+        }
+
+        .c-tiles_4 & {
+            @include media($s) {
+                width: calc(25% - 23px);
+                margin-bottom: 23px;
+                margin-right: 23px;
+            }
+        }
+
+        body.locations & {
+            @include media($xs) {
+                width: calc(50% - 23px);
+                margin-bottom: 23px;
+                margin-right: 23px;
+            }
+
+            @include media($s) {
+                width: calc(33.33% - 23px);
+            }
+
+            @include media($l) {
+                width: calc(25% - 23px);
+            }
+        }
+    }
+
+    &__item-image {
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            transform: none;
+            transition: transform .3s;
+        }
+    }
+
+    &__item-content {
+        padding-top: 18px;
+        padding-bottom: 26px;
+        padding-left: 13px;
+        padding-right: 13px;
+        color: $theme-color3;
+
+        &:hover {
+            color: $theme-color3;
+        }
+
+        @include media($s) {
+            padding-top: 22px;
+            padding-bottom: 22px;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+
+        .c-tiles_4 & {
+            @include media($s) {
+                padding-top: 16px;
+                padding-bottom: 25px;
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+
+        .c-events-list_press & {
+            @include media($xl) {
+                padding-top: 42px;
+                padding-bottom: 42px;
+            }
+        }
+
+        .c-events-list_products & {
+            text-align: center;
+        }
+
+        .c-team & {
+            @include media($xl) {
+                padding-top: 24px;
+                padding-bottom: 30px;
+            }
+        }
+    }
+
+    &__item-title {
+        margin-bottom: 12px;
+        font-size: 25px;
+        font-family: $font2;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: left;
+
+        @include media($s) {
+            font-size: 23px;
+        }
+
+        @include media($l) {
+            font-size: 31px;
+        }
+
+        sup {
+            font-size: 18px;
+            transform: translateY(-4px);
+            display: inline-block;
+        }
+
+        .c-tiles_4 & {
+            @include media($l) {
+                font-size: 25px;
+            }
+        }
+
+        .c-events-list_press &,
+        .c-team & {
+            @include media(max-width $s - 1px) {
+                text-align: center;
+            }
+        }
+
+        .c-events-list_products & {
+            text-align: center;
+        }
+    }
+
+    &__item-sub-title {
+        margin-bottom: 17px;
+        font-weight: 700;
+        line-height: 0.6;
+    }
+
+    &__item-text2 {
+        margin-bottom: 12px;
+        line-height: 1.4;
+        text-align: left;
+    }
+
+    &__item-text {
+        font-size: 16px;
+        text-align: left;
+        p {
+            line-height: 1.35;
+        }
+    }
+
+    &__item-date {
+        color: $theme-color4;
+        margin-bottom: 9px;
+    }
+
+    &__item-price {
+        color: $theme-color3;
+        //margin-bottom: 9px;
+        font-size: 18px;
+        font-family: $font2;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    &__item-excerpt {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.4;
+        margin-bottom: 10px;
+
+        a {
+            color: $theme-color6;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    }
+
+    &__item-link {
+        color: $theme-color6;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-top: 4px;
+
+        .c-team & {
+            text-transform: none;
+        }
+    }
+
+    &__item-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 32px;
+        color: $theme-color1;
+        text-transform: uppercase;
+        font-size: 15px;
+        background-color: $theme-color6;
+    }
+
+    &__buttons {
+        @include media($xl) {
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+
+    .c-button {
+        margin-top: 18px;
+        @include media(max-width $s - 1px) {
+            width: calc(100% - 6px);
+        }
+
+        @include media($xl) {
+            min-width: 0;
+            width: 144px;
+        }
+
+        &:not(:first-of-type) {
+            @include media($xl) {
+                margin-left: 26px;
+            }
+        }
+    }
+}
+
+.c-tiles_4 .c-button {
+    @include media(max-width $m - 1px) {
+        min-width: 0;
+    }
+}

@@ -1,0 +1,319 @@
+@import "../common/variables";
+@import "../utilities/mixins";
+
+.c-form2 {
+    margin-bottom: 85px;
+    @include media($s) {
+        margin-bottom: 136px;
+    }
+
+    &__inner {
+        max-width: 870px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-family: $font2;
+        font-size: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 30px;
+        @include media($s) {
+            margin-bottom: 60px;
+            font-size: 40px;
+        }
+    }
+}
+
+//  Dialog form styles
+.dcf-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .dcf-response {
+        width: 100%;
+    }
+
+    .dcf-column {
+        position: relative;
+        width: 100%;
+        margin-bottom: 25px;
+
+        &.js-dcf-textarea {
+            label {
+                transform: translateY(0);
+                top: 10px;
+            }
+
+            &.js-active {
+                label {
+                    transform: scale(0.7) translateY(-200%);
+
+                    @include media($s) {
+                        transform: scale(0.85) translateY(-165%);
+                    }
+                }
+            }
+
+            @include media($s) {
+                width: 100%;
+            }
+        }
+
+        &.js-dcf-button {
+            margin-bottom: 0;
+            text-align: center;
+
+            @include media($s) {
+                width: 100%;
+                margin-bottom: 0;
+                margin-top: 14px;
+            }
+
+            .dcf-control {
+                background-color: transparent;
+                border-radius: 0;
+                overflow: visible;
+            }
+        }
+
+        @include media($s) {
+            width: 48.7%;
+            margin-bottom: 22px;
+        }
+
+        &.js-active {
+            label {
+                color: $theme-color6;
+                transform: scale(0.7) translateY(-275%);
+                @include media($s) {
+                    transform: scale(0.85) translateY(-250%);
+                }
+            }
+
+            input,
+            textarea,
+            .custom-select-container {
+                border-color: $theme-color6;
+            }
+
+            .custom-select-opener {
+                opacity: 1;
+            }
+        }
+
+        label {
+            transform: translateY(-50%);
+            transform-origin: left top;
+            transition: .3s;
+            position: absolute;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 16px;
+            top: 50%;
+            left: 10px;
+            color: $theme-color3;
+            @include media($s) {
+                left: 14px;
+                font-size: 18px;
+            }
+        }
+
+        input,
+        textarea {
+            color: $theme-color2;
+            text-transform: uppercase;
+            font-weight: 700;
+            position: relative;
+            width: 100%;
+            font-size: 16px;
+            padding: 10px;
+            border-bottom: 2px solid;
+            border-color: $theme-color4;
+            transition: .3s;
+
+            @include media($s) {
+                padding: 0 14px;
+                font-size: 18px;
+            }
+        }
+
+        input {
+            height: 40px;
+            @include media($s) {
+                height: 52px;
+            }
+        }
+
+        textarea {
+            resize: none;
+            height: 160px;
+            display: block;
+
+            @include media($s) {
+                height: 234px;
+            }
+        }
+
+        select {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .c-button {
+            min-width: 0;
+            @include media(max-width $s - 1px) {
+                width: 100%;
+            }
+        }
+
+        .dcf-control {
+            background-color: $theme-color1;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .dcf-required {
+            text-decoration: none;
+        }
+
+        .dcf-error-message {
+            color: $theme-color9;
+            font-size: 12px;
+            text-align: right;
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+        }
+
+        .custom-select-container {
+            height: 40px;
+            cursor: pointer;
+            border-bottom: 2px solid;
+            border-color: transparent;
+            position: relative;
+            border-bottom: 2px solid $theme-color4;
+
+            @include media($s) {
+                &:after {
+                    right: 14px !important;
+                }
+            }
+
+            &:after {
+                content: '';
+                visibility: visible;
+                pointer-events: none;
+                position: absolute;
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ny4yMyAyNS40NSI+PHBvbHlsaW5lIHBvaW50cz0iMy41IDMuNSAyMy42MSAyMC44MyA0My43MyAzLjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iNyIvPjwvc3ZnPg0K");
+                background-repeat: no-repeat;
+                width: 15px;
+                height: 8px;
+                top: calc(50% - 3px);
+                right: 10px;
+            }
+
+            @include media($s) {
+                height: 52px;
+            }
+
+            &.is-open {
+                border-color: transparent;
+
+                &:after {
+                    transform: rotateX(180deg);
+                }
+
+                .custom-select-panel {
+                    display: block;
+                }
+
+                .custom-select-opener {
+                    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+                }
+            }
+        }
+
+        .custom-select-opener {
+            opacity: 0;
+            width: 100%;
+            display: block;
+            outline: 0;
+            line-height: 40px;
+            @include media($s) {
+                line-height: 52px;
+                padding: 0 14px;
+                font-size: 18px;
+            }
+
+            color: $theme-color2;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 10px;
+            transition: .3s;
+        }
+
+        .custom-select-panel {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            display: none;
+            top: 40px !important;
+            max-height: 172px;
+            overflow: auto;
+            background-color: $theme-color1;
+            padding-top: 3px;
+            padding-bottom: 10px;
+            box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.15);
+            border-bottom: 2px solid;
+            border-color: $theme-color4;
+
+            @include media($s) {
+                top: 52px !important;
+                max-height: 200px;
+                padding-bottom: 20px;
+            }
+        }
+
+        .custom-select-option {
+            cursor: pointer;
+            padding: 7px 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            @include media($s) {
+                padding: 7px 14px;
+                font-size: 20px;
+            }
+
+            &:hover,
+            &.active {
+                color: $theme-color6;
+            }
+
+            &.is-selected {
+                color: $theme-color6;
+            }
+        }
+    }
+
+    .dcf-success {
+        color: $theme-color7;
+        margin-bottom: 70px;
+        font-weight: 700;
+        @include media($s) {
+            font-size: 20px;
+        }
+    }
+
+    .dcf-error {
+        color: $theme-color9;
+        margin-bottom: 70px;
+        font-weight: 700;
+        @include media($s) {
+            font-size: 20px;
+        }
+    }
+}
